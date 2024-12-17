@@ -9,6 +9,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 import requests
+import secrets
 
 
 # -------------------------------- CREATING FORM TO SEARCH ABOUT MOVIE -------------------------------------------------
@@ -26,7 +27,7 @@ class RateMovieForm(FlaskForm):
 
 # SETTING APP FLASK
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.secret_key = secrets.token_hex(31)
 Bootstrap5(app)
 
 
